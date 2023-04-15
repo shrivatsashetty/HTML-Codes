@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <h1>Displaying Student Data</h1>
+        <script>
+            function createTable(){
+                var students=[
+                    {
+                        "name":"Shrivatsa",
+                        "id":"MCA052",
+                        "major":"Computer Netwoks",
+                        "mobile":"9972717789"
+                    },
+                    {
+                        "name":"Aravinda S",
+                        "id":"MCA015",
+                        "major":"SQL",
+                        "mobile":"6987256471"
+                    },
+                    {
+                        "name":"Sudarma",
+                        "id":"MCA087",
+                        "major":"Cyber Security",
+                        "mobile":"8945213687"
+                    }
+                ]
+                var tablebody='<table border="5"><tr><td>Student-Name</td><td>Sudent-ID</td><td>Major</td><td>Mob</td></tr>'
+                    students.forEach(function(d){
+                        tablebody+='<tr><td>'+d.name+'</td><td>'+d.id+'</td><td>'+d.major+'</td><td>'+d.mobile+'</td></tr>';
+                    });
+                    tablebody+='</table>';
+                    var divContainer=document.getElementById("showData");
+                    divContainer.innerHTML=tablebody;
+                    }
+        </script>
+
+
+    </head>
+    <body>
+        <input type="button" onclick="createTable()" value="createTable"/>
+        <p id="showData"></p>
+    </body>
+</html>

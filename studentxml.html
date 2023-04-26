@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h2>STUDENT INFO USING XML</h2>
+        <style>
+            table, th, td {
+                border: 3px solid black;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding:15px;
+            }
+        </style>
+    </head>
+    <body>
+        <button type="button" onclick="studentData()">Click Here</button><br/>
+        <table id="window"></table>
+        <script>
+            function studentData(){
+                var std = new XMLHttpRequest();
+                std.onreadystatechange = function(){
+                    if (this.readyState==4 && this.status==200){
+                        myFunction(this);
+                    }
+                };
+                std.open("GET","stddata.xml",true);
+                std.send();
+            }
+            function myFunction(xml){
+                var i;
+                var xmlDoc=xml.responseXML;
+                var table="<tr><td>USN</td><td>NAME</td><td>Branch</td><td>Address</td></tr>";
+                var x = xmlDoc.getElementsByTagName("student");
+                for(i=0 ;i<length.x;i++){
+                    table+="<tr><td>"+
+                        x[i].getElementsByTagName("usn")[0].childNodes[0].nodeValue+"</td><td>"+
+                        x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue+"</td><td>"+
+                        x[i].getElementByTagName("Branch")[0].childNodes[0].nodeValue+"</td><td>"+
+                        x[i].getElementByTagName("address")[0].ChildNodes[0].nodeValue+"</td></tr>";
+
+                        document.getElementById("window").innerHTML=table;
+                        
+                }
+            }
+
+        </script>
+    </body>
+
+
+</html>

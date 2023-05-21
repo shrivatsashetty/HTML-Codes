@@ -1,6 +1,13 @@
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
         <h1>Displaying Student Data</h1>
+        <input type="button" onclick="createTable()" value="createTable"/>
+        <p id="showData"></p>
         <script>
             function createTable(){
                 var students=[
@@ -33,10 +40,5 @@
                     }
         </script>
 
-
-    </head>
-    <body>
-        <input type="button" onclick="createTable()" value="createTable"/>
-        <p id="showData"></p>
     </body>
 </html>

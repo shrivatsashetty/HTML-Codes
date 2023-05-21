@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Student  Info by JSON</title>
     </head>
     <body>
         <h1>Displaying Student Data</h1>
-        <input type="button" onclick="createTable()" value="createTable"/>
-        <p id="showData"></p>
+        <input type="button" onclick="createTable()" value="Show Table" />
+        <p id="displayInfo"></p>
         <script>
-            function createTable(){
-                var students=[
+            var students=[
                     {
                         "name":"Shrivatsa",
                         "id":"MCA052",
@@ -31,13 +31,14 @@
                         "mobile":"8945213687"
                     }
                 ]
-                var tableBody='<table border="5"><tr><th>Student-Name</th><th>Sudent-ID</th><th>Major</th><th>Mob</th></tr>'
+            var tableBody='<table border="8"><tr><th>Student-Name</th><th>Sudent-ID</th><th>Major</th><th>Mob</th></tr>'
+
+            function createTable(){
                     students.forEach(function(d){
                         tableBody+='<tr><td>'+d.name+'</td><td>'+d.id+'</td><td>'+d.major+'</td><td>'+d.mobile+'</td></tr>';
-                    });
+                    });// +d.name means name will be concatenated as string
                     tableBody+='</table>';
-                    document.getElementById("showData").innerHTML=tableBody;
-                    
+                    document.getElementById("displayInfo").innerHTML=tableBody;
                     }
         </script>
 

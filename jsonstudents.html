@@ -11,7 +11,7 @@
         <input type="button" onclick="createTable()" value="Show Table" />
         <p id="displayInfo"></p>
         <script>
-            var students=[
+            let students=[
                     {
                         "name":"Shrivatsa",
                         "id":"MCA052",
@@ -31,7 +31,7 @@
                         "mobile":"8945213687"
                     }
                 ]
-            var tableBody='<table border="8"><tr><th>Student-Name</th><th>Sudent-ID</th><th>Major</th><th>Mob</th></tr>'
+            let tableBody='<table border="8"><tr><th>Student-Name</th><th>Sudent-ID</th><th>Major</th><th>Mob</th></tr>'
 
             function createTable(){
                     students.forEach(function(d){

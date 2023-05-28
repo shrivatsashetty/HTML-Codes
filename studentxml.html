@@ -1,50 +1,52 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <h2>STUDENT INFO USING XML</h2>
+        <meta charset = "UTF-8" />
+        <title>Student database</title>
         <style>
-            table, th, td {
-                border: 3px solid black;
-                border-collapse: collapse;
-            }
-            th, td {
-                padding:15px;
-            }
+            table,th,td {
+ 		 border : 2px solid black;
+ 		 border-collapse: collapse ;
+				}
+		th,td 	{
+  			padding: 5px;
+			}
+
+
         </style>
     </head>
     <body>
-        <button type="button" onclick="studentData()">Click Here</button><br/>
-        <table id="window"></table>
+        <button type="button" onclick="studentData()">Click Here</button>
+        <table id="students-list"></table>
         <script>
             function studentData(){
-                let std = new XMLHttpRequest();
+                var std = new XMLHttpRequest();
                 std.onreadystatechange = function(){
-                    if (this.readyState==4 && this.status==200){
+                    if(this.readyState==4 && this.status==200){
                         myFunction(this);
                     }
-                };
+                }
                 std.open("GET","stddata.xml",true);
                 std.send();
-            }
+            };
             function myFunction(xml){
-                let i;
-                let xmlDoc=xml.responseXML;
-                let table="<tr><td>USN</td><td>NAME</td><td>Branch</td><td>Address</td></tr>";
-                let x = xmlDoc.getElementsByTagName("student");
-                for(i=0 ;i<length.x;i++){
+                var i
+                var xmlDoc = xml.responseXML;
+                var table = "<tr><th>Name</th><th>USN</th><th>Branch</th><th>Year Admitted</th><th>Address</th></tr>";
+                var doc = xmlDoc.getElementById("student");
+                for (i=0; i<doc.length; i++){
+
                     table+="<tr><td>"+
-                        x[i].getElementsByTagName("usn")[0].childNodes[0].nodeValue+"</td><td>"+
-                        x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue+"</td><td>"+
-                        x[i].getElementByTagName("Branch")[0].childNodes[0].nodeValue+"</td><td>"+
-                        x[i].getElementByTagName("address")[0].ChildNodes[0].nodeValue+"</td></tr>";
-
-                        document.getElementById("window").innerHTML=table;
-                        
+                        doc[i].getElementByTagname("name")[0].childnode[0].nodevalue[0]+"</td><td>"+
+                        doc[i].getElementByTagname("usn")[0].childnode[0].nodevalue[0]+"</td><td>"+
+                        doc[i].getElementByTagname("branch")[0].childnode[0].nodevalue[0]+"</td><td>"+
+                        doc[i].getElementByTagname("year")[0].childnode[0].nodevalue[0]+"</td><td>"+
+                        doc[i].getElementByTagname("address")[0].childnode[0].nodevalue[0]+"</td></tr>"
                 }
-            }
+                document.getElementById("students-list").innerHTML=table;
 
+
+            }
         </script>
     </body>
-
-
 </html>

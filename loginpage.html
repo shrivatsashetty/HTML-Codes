@@ -14,6 +14,8 @@
             #but{
                 margin-left: 130px;
             }
+
+            body{background-color: skyblue;}
         </style>
     </head>
 
@@ -43,7 +45,7 @@
                 let p = document.getElementById("pass").value;
 
                 let us = /[A-Za-z0-9]/;
-                let pa = /[a-z]/;
+                let pa = /[a-z]{8}/;
 
                 if(us.test(u) && pa.test(p)) {
 

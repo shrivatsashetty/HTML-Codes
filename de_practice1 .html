@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>D3 Tutorial</title>
+
+
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <style>
+        svg rect {
+            fill:rgb(18, 223, 223);
+
+        }
+
+        svg text {
+            fill: blue;
+            font-size: larger;
+            text-anchor: end;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button onclick="drawgraph()">Show Graph</button>
+
+    <br><br><br><br>
+    <svg id="svg"></svg>
+    <script>
+        function drawgraph() {
+            var s1 = parseInt(prompt("Enter data (max 100)"))
+            var s2 = parseInt(prompt("Enter data (max 100)"))
+            var s3 = parseInt(prompt("Enter data (max 100)"))
+            var s4 = parseInt(prompt("Enter data (max 100)"))
+            var s5 = parseInt(prompt("Enter data (max 100)"))
+            var dataset = [s1, s2, s3, s4, s5];
+
+            var barHeight = 45;
+            var width = 1100;
+            var scaleFactor = 10;
+
+            var graph = d3.select("svg")
+                .attr('height', barHeight * dataset.length)
+                .attr('width', width)
+
+            var bar=graph.selectAll('g')
+                .data(dataset)
+                .enter()
+                .append('g')
+                .attr('transform',function(d , i){
+                    return 'translate(0,'+i*barHeight+')'
+                }
+
+                );
+
+            bar.append('rect')
+                .attr('height',barHeight-5)
+                .attr('width',function(d){ return d;})
+                
+            bar.append('text')
+                .attr('x',function(d){return d-10;})
+                .attr('y',function(d){ return barHeight/2})
+                .text(function(d){return d})
+
+        }
+
+
+    </script>
+
+</body>
+
+
+
+
+</html>

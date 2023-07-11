@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Inventory Website</title>
+        <style>
+        
+            body { background-color:skyblue;}
+
+            table { width:700px;  /* 100px is apprx equal to 1 inch */
+                    margin:auto;
+                    /*border:10px solid gray;*/
+            }
+
+            td {
+                text-align:center;
+                padding:30px;
+            }
+
+            td th {
+            padding:15px;  
+            }
+
+            th {
+                background-color:blue;
+                padding:15px;
+                margin:0px;
+            }
+
+            ul {
+                background-color:white;
+                padding:20px;
+            }
+
+            ul li {
+                padding:20px;
+                display:inline;
+                margin:20px;
+                border:5px salmon;
+            }
+
+            ul li:hover {
+                background-color:pink;
+                padding:20px;
+            }
+
+            h1 {
+                margin:10px;
+                padding:10px;
+                background-color:slategray;
+                font: 60px sans-serif;
+            }
+
+            footer{
+                background-color:yellow;
+                color:white;
+                float:bottom;
+            }
+            /* Upto here all were tag selectors */
+            /* From here the selectors are class selectors */
+
+            .footer-content{
+                text-align:center;
+                color:black;
+            }
+        
+            .search-box{
+                float:right;
+                margin-right:50px;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        
+        <header>
+            <h1 style="text-align:center;"> WELCOME  TO  INVENTORY</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li> <a href="#">HOME</a> </li>
+                <li> <a href="#">ORDERS</a> </li>
+                <li> <a href="#">SALES</a> </li>
+                <li> <a href="#">ABOUT</a> </li>
+                <input class="search-box" type="text" placeholder="Search" />
+            </ul>
+                
+        </nav>
+        
+        <section>
+            <div>
+                <table border="10" style="text-align:center;color:black;">
+                    <tr>
+                        <th>S.NO.</th>
+                        <th>PRODUCT ID</th>
+                        <th>PRODUCT NAME</th>
+                        <th>PRICE</th>
+                        <th>DISCOUNT</th>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>2231</td>
+                        <td>Pen</td>
+                        <td>20</td>
+                        <td>5%</td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>2231</td>
+                        <td>Pen</td>
+                        <td>20</td>
+                        <td>5%</td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>2231</td>
+                        <td>Pen</td>
+                        <td>20</td>
+                        <td>5%</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2231</td>
+                        <td>Pen</td>
+                        <td>20</td>
+                        <td>5%</td>
+                    </tr>
+                </table>
+            </div>
+
+        </section>
+
+        <footer>
+            <div>
+                <h5 class="footer-content"> <u> SOCIAL MEDIA </u> </h5>
+                <p class="footer-content">twitter@inventory</p>
+                <p class="footer-content">facebook@inventory</p>        
+            </div>
+
+        </footer>
+
+    </body>
+</html>
